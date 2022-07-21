@@ -7,7 +7,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root',
 })
 export class LoginService {
-  public url: String = 'http://localhost:3000/api';
+  public url: String = 'http://localhost:3000/api/';
   public headersVariable = new HttpHeaders().set(
     'Content-Type',
     'application/json'
@@ -23,7 +23,7 @@ export class LoginService {
     }
     let params = JSON.stringify(usuario);
 
-    return this._http.post(this.url + '/login', params, {
+    return this._http.post(this.url + 'login', params, {
       headers: this.headersVariable,
     });
   }
@@ -51,7 +51,7 @@ export class LoginService {
   registroUsuarios(modeloUsuario: Usuario): Observable<any> {
     let parametros = JSON.stringify(modeloUsuario);
 
-    return this._http.post(this.url + '/registro', parametros, {
+    return this._http.post(this.url + 'registro', parametros, {
       headers: this.headersVariable,
     });
   }

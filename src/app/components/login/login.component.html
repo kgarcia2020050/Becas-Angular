@@ -1,0 +1,76 @@
+<app-navbar-inicio></app-navbar-inicio>
+<body>
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <input
+              class="checkbox"
+              type="checkbox"
+              id="reg-log"
+              name="reg-log"
+            />
+            <!-- <label for="reg-log">
+            </label> -->
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Iniciar sesión</h4>
+                      <div class="form-group">
+                        <span
+                          *ngIf="!password.valid && password.touched"
+                          class="requiredField"
+                        >
+                          Campo requerido
+                        </span>
+                        <input
+                          #email="ngModel"
+                          [(ngModel)]="modelo.email"
+                          type="email"
+                          name="logemail"
+                          class="form-style"
+                          placeholder="Email"
+                          id="logemail"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-at"></i>
+                      </div>
+                      <div class="form-group mt-2">
+                        <span
+                          *ngIf="!password.valid && password.touched"
+                          class="requiredField"
+                        >
+                          Campo requerido
+                        </span>
+                        <input
+                          #password="ngModel"
+                          [(ngModel)]="modelo.password"
+                          type="password"
+                          name="logpass"
+                          class="form-style"
+                          placeholder="Password"
+                          id="logpass"
+                          autocomplete="off"
+                        />
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <a class="btn mt-4" (click)="login()">Iniciar Sesión</a>
+                      <p class="mb-0 mt-4 text-center">
+                        <a routerLink="/registro" class="link"
+                          >¿No tienes cuenta? haz clic aquí para crear una.</a
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
