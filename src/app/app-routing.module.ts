@@ -14,6 +14,8 @@ import { RouterEmpresaComponent } from './components/router-empresa/router-empre
 import { EmpresaGuard } from './guards/empresa.guard';
 import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.component';
 import { VistaEmpresaComponent } from './components/vista-empresa/vista-empresa.component';
+import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
+import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -37,6 +39,7 @@ const routes: Routes = [
     children: [
       { path: 'perfil/:ID', component: PerfilComponent },
       { path: 'inicio', component: VistaUsuarioComponent },
+      { path: 'ver/:ID', component: VerEmpresaComponent },
     ],
   },
   {
@@ -46,6 +49,8 @@ const routes: Routes = [
     children: [
       { path: 'perfil/:ID', component: PerfilComponent },
       { path: 'inicio', component: VistaEmpresaComponent },
+      { path: 'solicitudes', component: SolicitantesComponent },
+      { path: 'beca/:ID', component: VerEmpresaComponent },
     ],
   },
   { path: '**', component: InicioComponent },

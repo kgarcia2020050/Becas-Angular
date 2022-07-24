@@ -1,9 +1,9 @@
 <app-navbar-vistas></app-navbar-vistas>
 
-<div class="banner" *ngIf="this.identidad.rol == 'ADMIN'">
+<div class="banner">
   <div class="capa"></div>
   <div class="info">
-    <h1>Bienvenido Administrador</h1>
+    <h1>Bienvenido Usuario</h1>
     <p>
       El administrador puede ver todos los usuarios registrados, Puede agregar a
       la base de datos un nuevo hotel y Puede ver la estadística.
@@ -68,9 +68,9 @@
                                 ><span class="fa fa-star"></span>
                               </div>
                               <p class="border-top additional">
-                                Gerente: {{ hoteles.gerente }}
+                                Descripcion: {{ hoteles.descripcion }}
                               </p>
-                              <p>Teléfono: {{ hoteles.telefono }}</p>
+                              <p>Vacantes: {{ hoteles.vacantes }}</p>
                               <p>
                                 <i class="p-3 fa fa-bath"></i
                                 ><i class="p-3 fa fa-phone"></i
@@ -92,21 +92,7 @@
                                   hoteles._id
                                 ]"
                               >
-                                Reservar &gt;
-                              </div>
-                              <div
-                                *ngIf="this.identidad.rol == 'ADMIN'"
-                                [routerLink]="[
-                                  '/principal/verHotel',
-                                  hoteles._id
-                                ]"
-                                class="btn btn-success"
-                                [routerLink]="[
-                                  '/principal/verHotel',
-                                  hoteles._id
-                                ]"
-                              >
-                                Ver hotel &gt;
+                                Ver becas disponibles &gt;
                               </div>
                             </div>
                           </div>

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
-import { AdminService } from 'src/app/services/admin.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
+import { BecasService } from 'src/app/services/becas.service';
 
 @Component({
   selector: 'app-vista-usuario',
   templateUrl: './vista-usuario.component.html',
   styleUrls: ['./vista-usuario.component.css'],
-  providers: [AdminService, LoginService],
+  providers: [BecasService, LoginService],
 })
 export class VistaUsuarioComponent implements OnInit {
   public getModelo: Usuario;
@@ -16,7 +16,7 @@ export class VistaUsuarioComponent implements OnInit {
   public identidad;
 
   constructor(
-    private _adminService: AdminService,
+    private _becaService: BecasService,
     private _loginService: LoginService
   ) {
     this.token = this._loginService.obtenerToken();
@@ -27,9 +27,9 @@ export class VistaUsuarioComponent implements OnInit {
     this.empresasRegistradas();
   }
   empresasRegistradas() {
-    this._adminService.empresasRegistradas(this.token).subscribe({
+    this._becaService.obtenerBecas().subscribe({
       next: (response: any) => {
-        this.getModelo = response.Empresas_registradas;
+        this.getModelo = response.Becas;
       },
       error: (error: any) => {
         Swal.fire({

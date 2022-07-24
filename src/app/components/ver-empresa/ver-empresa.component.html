@@ -1,0 +1,158 @@
+<body>
+  <app-navbar-vistas></app-navbar-vistas>
+
+  <div id="table" class="container emp-profile">
+    <form #editForm="ngForm">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img
+              class="rounded-circle mt-5"
+              width="200px"
+              src="https://solucionesads.com/wp-content/uploads/2019/11/becas.png"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              <span class="font-weight-bold">Modificar Beca</span>
+            </h5>
+            <h6>Administrador de la empresa</h6>
+            <p class="proile-rating">OPCIONES : <span></span></p>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="home-tab"
+                  data-toggle="tab"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Editar información</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <div class="row">
+                <div class="col-md-5">
+                  <label>Nombre</label>
+                </div>
+                <div class="col-md-6">
+                  <span
+                    *ngIf="!nombre.valid && nombre.touched"
+                    class="requiredField"
+                  >
+                    Campo requerido
+                  </span>
+                  <p>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="nombre"
+                      required="true"
+                      #nombre="ngModel"
+                      [(ngModel)]="getIdModelo.nombre"
+                    />
+                  </p>
+                </div>
+              </div>
+              <!--               <div class="row">
+                <div class="col-md-5">
+                  <label>Vacantes</label>
+                </div>
+                <div class="col-md-6">
+                  <span
+                    *ngIf="!vacantes.valid && vacantes.touched"
+                    class="requiredField"
+                  >
+                    Campo requerido
+                  </span>
+                  <p>
+                    <input
+                      type="number" 
+                      class="form-control"
+                      name="vacantes"
+                      #vacantes="ngModel"
+                      required="true"
+                      [(ngModel)]="this.getIdModelo.vacantes"
+                    />
+                  </p>
+                </div>
+              </div> -->
+              <div class="row">
+                <div class="col-md-5">
+                  <label>Descripcion</label>
+                </div>
+                <div class="col-md-6">
+                  <span
+                    *ngIf="!descripcion.valid && descripcion.touched"
+                    class="requiredField"
+                  >
+                    Campo requerido
+                  </span>
+                  <p>
+                    <textarea
+                      type="number"
+                      class="form-control"
+                      name="vacantes"
+                      #descripcion="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.descripcion"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <label>Requisitos</label>
+                </div>
+                <div class="col-md-6">
+                  <span
+                    *ngIf="!requisitos.valid && requisitos.touched"
+                    class="requiredField"
+                  >
+                    Campo requerido
+                  </span>
+                  <p>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      name="requisitos"
+                      #requisitos="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.requisitos"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            [disabled]="!editForm.form.valid"
+            id="btnAgregar"
+            class="learn-more"
+            (click)="editarBeca()"
+          >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Guardar cambios</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

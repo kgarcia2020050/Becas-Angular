@@ -13,7 +13,6 @@ export class AdminService {
     'application/json'
   );
 
-  public identidad;
   constructor(public _http: HttpClient) {}
 
   empresasRegistradas(token): Observable<any> {

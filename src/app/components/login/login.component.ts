@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.clear()
+    localStorage.clear();
   }
 
   obtenerTokenPromesa(): Promise<any> {
@@ -50,13 +51,18 @@ export class LoginComponent implements OnInit {
           } else if (response.Inicio_exitoso.rol == 'USUARIO') {
             this._router.navigate(['/usuario/inicio']);
           } else if (response.Inicio_exitoso.rol == 'EMPRESA') {
-            this._router.navigate(['/routerHotel/hoteles']);
+            this._router.navigate(['/empresas/inicio']);
           } else {
             this._router.navigate(['/inicio']);
           }
         });
       },
-      error: (error: any) => {},
+      error: (error: any) => {
+        Swal.fire({
+          icon: 'error',
+          title: error.error.Error,
+        });
+      },
     });
   }
 }

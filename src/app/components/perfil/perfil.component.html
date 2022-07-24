@@ -26,6 +26,12 @@
               src="https://cdn.icon-icons.com/icons2/1999/PNG/512/avatar_man_people_person_profile_user_icon_123385.png"
             />
             <img
+              *ngIf="getIdModelo.rol == 'EMPRESA'"
+              class="rounded-circle mt-5"
+              width="200px"
+              src="https://img.freepik.com/vector-premium/personaje-dibujos-animados-grafico-vector-ilustracion-empresa_516790-299.jpg?w=2000"
+            />
+            <img
               *ngIf="
                 getIdModelo.rol == 'USUARIO' && getIdModelo.genero == 'Femenino'
               "
@@ -80,7 +86,9 @@
               role="tabpanel"
               aria-labelledby="home-tab"
             >
-              <div class="row">
+              <div
+                class="row"
+              >
                 <div class="col-md-5">
                   <label>Nombre</label>
                 </div>
@@ -120,7 +128,9 @@
                   </p>
                 </div>
               </div>
-              <div class="row">
+              <div
+                class="row"
+              >
                 <div class="col-md-5">
                   <label>Correo/Usuario</label>
                 </div>
@@ -140,47 +150,6 @@
                   </p>
                 </div>
               </div>
-              <!--               <div *ngIf="this.identidad.rol == 'HOTEL'" class="row">
-                <div class="col-md-5">
-                  <label>Direccion</label>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <span *ngIf="!direccion.valid && direccion.touched"
-                      >Campo requerido</span
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="direccion"
-                      #direccion="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.direccion"
-                    />
-                  </p>
-                </div>
-              </div> -->
-
-              <!--               <div *ngIf="this.identidad.rol == 'HOTEL'" class="row">
-                <div class="col-md-5">
-                  <label>Gerente</label>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <span *ngIf="!gerente.valid && gerente.touched"
-                      >Campo requerido</span
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="gerente"
-                      #gerente="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.gerente"
-                    />
-                  </p>
-                </div>
-              </div> -->
 
               <div
                 *ngIf="
@@ -232,19 +201,6 @@
             </span>
             <span class="button-text">Borrar perfil</span>
           </button>
-          <!--           <button
-            (click)="verFactura(this.identidad._id)"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            *ngIf="this.identidad.rol == 'USUARIO'"
-            id="btnAgregar"
-            class="learn-more"
-          >
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Factura</span>
-          </button> -->
         </div>
       </div>
     </form>

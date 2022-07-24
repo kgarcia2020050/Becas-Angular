@@ -18,6 +18,9 @@ import { UsuariosRegistradosComponent } from './components/usuarios-registrados/
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
 import { NavbarVistasComponent } from './components/navbar-vistas/navbar-vistas.component';
+import { BecaComponent } from './components/beca/beca.component';
+import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
+import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { NavbarVistasComponent } from './components/navbar-vistas/navbar-vistas.
     PerfilComponent,
     AdministracionComponent,
     NavbarVistasComponent,
+    BecaComponent,
+    SolicitantesComponent,
+    VerEmpresaComponent,
   ],
   imports: [
     BrowserModule,
