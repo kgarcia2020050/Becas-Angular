@@ -87,12 +87,9 @@
                               <div
                                 *ngIf="this.identidad.rol == 'USUARIO'"
                                 class="btn btn-success"
-                                [routerLink]="[
-                                  '/routerUsuario/verHotel',
-                                  hoteles._id
-                                ]"
+                                [routerLink]="['/usuario/ver', hoteles._id]"
                               >
-                                Ver becas disponibles &gt;
+                                Ver informacion.
                               </div>
                             </div>
                           </div>

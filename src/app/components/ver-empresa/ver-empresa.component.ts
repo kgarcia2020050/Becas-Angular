@@ -37,7 +37,7 @@ export class VerEmpresaComponent implements OnInit {
     this._becasService.becaId(id, this.token).subscribe({
       next: (response: any) => {
         this.getIdModelo = response.Beca_encontrada;
-        console.log(this.getIdModelo.vacantes)
+        console.log(this.getIdModelo.vacantes);
       },
       error: (error: any) => {
         Swal.fire({
