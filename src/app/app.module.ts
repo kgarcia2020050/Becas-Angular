@@ -21,6 +21,7 @@ import { NavbarVistasComponent } from './components/navbar-vistas/navbar-vistas.
 import { BecaComponent } from './components/beca/beca.component';
 import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
 import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.compon
     BecaComponent,
     SolicitantesComponent,
     VerEmpresaComponent,
+    FormularioComponent,
   ],
   imports: [
     BrowserModule,

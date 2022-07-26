@@ -16,6 +16,7 @@ import { VistaUsuarioComponent } from './components/vista-usuario/vista-usuario.
 import { VistaEmpresaComponent } from './components/vista-empresa/vista-empresa.component';
 import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
 import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'perfil/:ID', component: PerfilComponent },
       { path: 'inicio', component: VistaUsuarioComponent },
       { path: 'ver/:ID', component: VerEmpresaComponent },
+      { path: 'solicitar/:Beca', component: FormularioComponent },
     ],
   },
   {

@@ -3,6 +3,7 @@ import { LoginService } from './login.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
+import { Solicitudes } from '../models/solicitudes';
 
 @Injectable({
   providedIn: 'root',
@@ -38,5 +39,14 @@ export class UsuarioService {
     );
   }
 
-
+  enviarSolicitud(idBeca: String, token, modelo: Solicitudes): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    let parametros = JSON.stringify(modelo);
+    let id = this.identidad._id;
+    return this._http.post(
+      this.url + 'enviar/' + id + '/' + idBeca,
+      parametros,
+      { headers: headersToken }
+    );
+  }
 }
