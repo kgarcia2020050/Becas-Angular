@@ -6,6 +6,8 @@ import { Solicitudes } from 'src/app/models/solicitudes';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
+import { CargarScriptsService } from './../../cargar-scripts.service';
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -20,7 +22,8 @@ export class FormularioComponent implements OnInit {
   constructor(
     private _userService: UsuarioService,
     private _loginService: LoginService,
-    private _router: Router
+    private _router: Router,
+    private _CargaScripts:CargarScriptsService
   ) {
     this.postModelo = new Solicitudes(
       '',
@@ -44,6 +47,8 @@ export class FormularioComponent implements OnInit {
     );
     this.token = this._loginService.obtenerToken();
     this.identidad = JSON.parse(localStorage.getItem('identidad'));
+
+    _CargaScripts.Carga(["ejemplo"]);
   }
 
   ngOnInit(): void {}
