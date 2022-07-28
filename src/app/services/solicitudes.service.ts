@@ -19,6 +19,14 @@ export class SolicitudesService {
     this.identidad = JSON.parse(localStorage.getItem('identidad'));
   }
 
+  misSolicitudes(token): Observable<any> {
+    let id = this.identidad._id;
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.get(this.url + 'misSolicitudes/' + id, {
+      headers: headersToken,
+    });
+  }
+
   verSolicitud(id: String, token): Observable<any> {
     let headersToken = this.headersVariable.set('Authorization', token);
     return this._http.get(this.url + 'verSolicitud/' + id, {
@@ -36,14 +44,25 @@ export class SolicitudesService {
 
   aprobar(idSolicitud: String, idBeca: String, token): Observable<any> {
     let headersToken = this.headersVariable.set('Authorization', token);
-    return this._http.put(this.url + 'aprobar/' + idSolicitud + '/' + idBeca, {
-      headers: headersToken,
-    });
+    return this._http.put(
+      this.url + 'aprobar/' + idSolicitud + '/' + idBeca,
+      '',
+      {
+        headers: headersToken,
+      }
+    );
   }
 
   denegar(id: String, token): Observable<any> {
     let headersToken = this.headersVariable.set('Authorization', token);
-    return this._http.put(this.url + 'denegar/' + id, {
+    return this._http.put(this.url + 'denegar/' + id, '', {
+      headers: headersToken,
+    });
+  }
+
+  cancelarSolicitud(id: String, token): Observable<any> {
+    let headersToken = this.headersVariable.set('Authorization', token);
+    return this._http.delete(this.url + 'cancelar/' + id, {
       headers: headersToken,
     });
   }

@@ -25,6 +25,7 @@ export class VistaUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.empresasRegistradas();
+    localStorage.removeItem("idBeca");
   }
   empresasRegistradas() {
     this._becaService.obtenerBecas().subscribe({

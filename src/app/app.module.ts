@@ -25,6 +25,9 @@ import { BecaComponent } from './components/beca/beca.component';
 import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
 import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     SolicitantesComponent,
     VerEmpresaComponent,
     FormularioComponent,
+    SolicitudesComponent,
+    SolicitudComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,61 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-</head>
-
 <body>
-
   <app-navbar-vistas></app-navbar-vistas>
 
-
   <div class="container">
-
-
-    <form id="form1">
-      <h3> Create Account</h3>
-      <input type="text" placeholder="Email" required>
-      <input type="text" placeholder="Password" required>
-      <input type="text" placeholder="Confirm Password" required>
-
+    <form #solicitudForm="ngForm" id="form1">
+      <h3>Informacion familiar</h3>
+      <textarea
+        name="infoMama"
+        #infoMama="ngModel"
+        [(ngModel)]="postModelo.infoMama"
+        type="text"
+        placeholder="Detalla la informacion de tu madre. Nombre completo, numero de celular, lugar de empleo, etc."
+      ></textarea>
+      <textarea
+        name="infoPapa"
+        #infoPapa="ngModel"
+        [(ngModel)]="postModelo.infoPapa"
+        type="text"
+        placeholder="Detalla la informacion de tu padre. Nombre completo, numero de celular, lugar de empleo, etc."
+      ></textarea>
       <div class="btn-box">
-        <button type="button" id="next1">Next</button>
+        <button
+          [disabled]="
+            (!infoMama.valid && infoMama.touched) ||
+            (!infoPapa.valid && infoPapa.touched)
+          "
+          type="button"
+          id="next1"
+        >
+          Siguiente
+        </button>
       </div>
     </form>
 
     <form id="form2">
-      <h3>Social Media</h3>
-      <input type="text" placeholder="Medium">
-      <input type="text" placeholder="Linkedin">
-      <input type="text" placeholder="Github">
+      <h3>Informacion academica</h3>
+      <textarea
+        name="infoColegio"
+        #infoColegio="ngModel"
+        [(ngModel)]="postModelo.infoColegio"
+        type="text"
+        placeholder="Detalla la informacion de tus estudios. Centros en los que has estudiado, nivel de estudios, etc."
+        required
+      ></textarea>
+
+      <input
+        name="calificaciones"
+        #calificaciones="ngModel"
+        [(ngModel)]="postModelo.calificaciones"
+        type="text"
+        placeholder="Enlace a tus calificaciones de los ultimos 3 anios."
+        required
+      />
 
       <div class="btn-box">
-        <button type="button" id="back1">Back</button>
-        <button type="button" id="next2">Next</button>
+        <button type="button" id="back1">Volver</button>
+        <button type="button" id="next2">Siguiente</button>
       </div>
     </form>
 
     <form id="form3">
-      <h3>Personal Info</h3>
-      <input type="text" placeholder="First Name" required>
-      <input type="text" placeholder="Last Name" required>
-      <input type="text" placeholder="Ph#" required>
-
+      <h3>Datos adicionales</h3>
+      <input
+        name="diplomas"
+        #diplomas="ngModel"
+        [(ngModel)]="postModelo.diplomas"
+        type="text"
+        placeholder="Enlace a tus diplomas de graduacion."
+        required
+      />
+      <input
+        name="fotografia"
+        #fotografia="ngModel"
+        [(ngModel)]="postModelo.fotografia"
+        type="text"
+        placeholder="Enlace de tu foto."
+        required
+      />
       <div class="btn-box">
-        <button type="button" id="back2">Back</button>
-        <button type="submit" id="submit">Submit</button>
+        <button type="button" id="back2">Volver</button>
+        <button type="submit" id="submit" (click)="enviarSolicitud()">
+          Enviar
+        </button>
       </div>
     </form>
 
     <div class="step-row">
       <div id="progress"></div>
-      <div class="step-col"><small>Step 1</small></div>
-      <div class="step-col"><small>Step 2</small></div>
-      <div class="step-col"><small>Step 3</small></div>
+      <div class="step-col"><small>Paso 1</small></div>
+      <div class="step-col"><small>Paso 2</small></div>
+      <div class="step-col"><small>Paso 3</small></div>
     </div>
-
   </div>
 </body>
-
-</html>

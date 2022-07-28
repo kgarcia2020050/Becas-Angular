@@ -1,2 +1,66 @@
 <app-navbar-vistas></app-navbar-vistas>
-<p>solicitantes works!</p>
+
+<div class="banner">
+  <div class="capa"></div>
+  <div class="info">
+    <h1>Mis solicitudes</h1>
+    <p>En este apartado veras todas las solicitudes de los usuarios.</p>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="bg-image h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <div class="title-cards">
+                    <h2>Mis solicitudes</h2>
+                  </div>
+
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Beca</th>
+                        <th scope="col">Solicitante</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let usuarios of getModelo">
+                        <th scope="row">{{ usuarios.nombreBeca }}</th>
+                        <td>
+                          <span>
+                            <span>{{ usuarios.nombreUsuario }}</span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <span>{{ usuarios.estado }}</span>
+                          </span>
+                        </td>
+
+                        <td>
+                          <button
+                            class="btn btn-success"
+                            [routerLink]="['/empresas/solicitud', usuarios._id]"
+                          >
+                            Ver solicitud
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

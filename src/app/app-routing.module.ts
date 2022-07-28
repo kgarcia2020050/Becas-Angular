@@ -17,6 +17,9 @@ import { VistaEmpresaComponent } from './components/vista-empresa/vista-empresa.
 import { SolicitantesComponent } from './components/solicitantes/solicitantes.component';
 import { VerEmpresaComponent } from './components/ver-empresa/ver-empresa.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { SolicitudComponent } from './components/solicitud/solicitud.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +45,8 @@ const routes: Routes = [
       { path: 'inicio', component: VistaUsuarioComponent },
       { path: 'ver/:ID', component: VerEmpresaComponent },
       { path: 'solicitar/:Beca', component: FormularioComponent },
+      { path: 'solicitudes', component: SolicitudesComponent },
+      { path: 'chat', component: ChatComponent },
     ],
   },
   {
@@ -51,8 +56,10 @@ const routes: Routes = [
     children: [
       { path: 'perfil/:ID', component: PerfilComponent },
       { path: 'inicio', component: VistaEmpresaComponent },
-      { path: 'solicitudes', component: SolicitantesComponent },
+      { path: 'solicitantes', component: SolicitantesComponent },
       { path: 'beca/:ID', component: VerEmpresaComponent },
+      { path: 'solicitud/:ID', component: SolicitudComponent },
+      { path: 'chat', component: ChatComponent },
     ],
   },
   { path: '**', component: InicioComponent },

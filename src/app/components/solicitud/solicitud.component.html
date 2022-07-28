@@ -1,0 +1,244 @@
+<body>
+  <app-navbar-vistas></app-navbar-vistas>
+
+  <div id="table" class="container emp-profile">
+    <form #editForm="ngForm">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img
+              class="rounded-circle mt-5"
+              width="200px"
+              src="https://solucionesads.com/wp-content/uploads/2019/11/becas.png"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <h5>
+              <span
+                *ngIf="this.identidad.rol == 'EMPRESA'"
+                class="font-weight-bold"
+                >Vista de beca</span
+              >
+            </h5>
+            <h6 *ngIf="this.identidad.rol == 'EMPRESA'">
+              Administrador de la empresa
+            </h6>
+            <h6 *ngIf="this.identidad.rol == 'EMPRESA'">
+              Nombre de la beca: {{ getIdModelo.nombreBeca }}
+            </h6>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  *ngIf="this.identidad.rol == 'EMPRESA'"
+                  class="nav-link active"
+                  id="home-tab"
+                  data-toggle="tab"
+                  role="tab"
+                  aria-controls="home"
+                  aria-selected="true"
+                  >Ver información</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <div class="tab-content profile-tab" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Nombre del usuario</label>
+                </div>
+                <div class="col-md-6">
+                  <span
+                    *ngIf="!nombre.valid && nombre.touched"
+                    class="requiredField"
+                  >
+                    Campo requerido
+                  </span>
+                  <p>
+                    <input
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="nombreUsuario"
+                      required="true"
+                      #nombre="ngModel"
+                      [(ngModel)]="
+                        getIdModelo.nombreUsuario + getIdModelo.apellidoUsuario
+                      "
+                    />
+                  </p>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Email del usuario</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      readonly
+                      type="email"
+                      class="form-control"
+                      name="emailUsuario"
+                      #emailUsuario="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.emailUsuario"
+                    />
+                  </p>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Informacion de la madre</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="infoMama"
+                      #infoMama="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.infoMama"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Informacion del padre</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="infoPapa"
+                      #infoPapa="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.infoPapa"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Informacion academica</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="infoColegio"
+                      #infoColegio="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.infoColegio"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Enlace de diplomas</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="diplomas"
+                      #diplomas="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.diplomas"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Enlace de calificaciones</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="calificaciones"
+                      #calificaciones="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.calificaciones"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+              <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
+                <div class="col-md-5">
+                  <label>Enlace de fotografia</label>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <textarea
+                      readonly
+                      type="text"
+                      class="form-control"
+                      name="fotografia"
+                      #fotografia="ngModel"
+                      required="true"
+                      [(ngModel)]="getIdModelo.fotografia"
+                    ></textarea>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            *ngIf="this.identidad.rol == 'EMPRESA'"
+            [disabled]="!editForm.form.valid"
+            id="btnAgregar"
+            class="learn-more"
+            (click)="aprobar(getIdModelo._id, getIdModelo.idBeca)"
+          >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Aprobar</span>
+          </button>
+          <button
+            (click)="denegar(getIdModelo._id)"
+            *ngIf="this.identidad.rol == 'EMPRESA'"
+            [disabled]="!editForm.form.valid"
+            id="btnAgregar"
+            class="learn-more"
+          >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Denegar</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

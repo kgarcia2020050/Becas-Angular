@@ -1,0 +1,27 @@
+<app-navbar-vistas></app-navbar-vistas>
+<div class="container" style="width: 40%; margin: auto; margin-top: 100px">
+  <div>
+    <label for=""
+      >Hola
+      <span style="font-weight: bold">{{
+        this.identidad.nombre + " " + this.identidad.apellido
+      }}</span>
+      <br />
+      Escribe un mensaje</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      (change)="misMensajes()"
+      [(ngModel)]="chatUsuario.texto"
+    />
+  </div>
+  <div class="mt-3">
+    <div *ngFor="let msj of mensajes">
+      <label for="" style="font-weight: bold">{{
+        msj.usuario + ":" + " "
+      }}</label>
+      <span>{{ msj.texto }}</span>
+    </div>
+  </div>
+</div>

@@ -4,17 +4,18 @@
   font-family: sans-serif;
 }
 
-body{
+body {
   /* background: #757F9A;
   background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
   background: linear-gradient(to right, #D7DDE8, #757F9A);
- */}
+ */
+}
 
 .container {
   width: 360px;
   height: 425px;
   margin: 7% auto;
-  background:  #fbeee6 ;
+  background: #fbeee6;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -70,6 +71,10 @@ form button {
 }
 
 #form3 {
+  left: 450px;
+}
+
+#form4 {
   left: 450px;
 }
 

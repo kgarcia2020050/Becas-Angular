@@ -42,9 +42,9 @@
         <li class="nav-item" *ngIf="this.identidad.rol == 'EMPRESA'">
           <a
             class="nav-link"
-            routerLink="/empresas/solicitudes"
+            routerLink="/empresas/solicitantes"
             routerLinkActive="active"
-            >Solicitudes</a
+            >Solicitantes</a
           >
         </li>
         <li class="nav-item" *ngIf="this.identidad.rol == 'USUARIO'">
@@ -55,15 +55,31 @@
             >Inicio</a
           >
         </li>
-
-        <li class="nav-item" *ngIf="this.identidad.rol == 'HOTEL'">
+        <li class="nav-item" *ngIf="this.identidad.rol == 'USUARIO'">
           <a
             class="nav-link"
-            routerLink="/routerHotel/eventos"
+            routerLink="/usuario/chat"
             routerLinkActive="active"
-            >Eventos y Servicios</a
+            >Chat</a
           >
         </li>
+        <li class="nav-item" *ngIf="this.identidad.rol == 'EMPRESA'">
+          <a
+            class="nav-link"
+            routerLink="/empresas/chat"
+            routerLinkActive="active"
+            >Chat</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="this.identidad.rol == 'USUARIO'">
+          <a
+            class="nav-link"
+            routerLink="/usuario/solicitudes"
+            routerLinkActive="active"
+            >Solicitudes</a
+          >
+        </li>
+
         -->
       </ul>
     </div>

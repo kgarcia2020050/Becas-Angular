@@ -23,11 +23,10 @@ export class FormularioComponent implements OnInit {
     private _userService: UsuarioService,
     private _loginService: LoginService,
     private _router: Router,
-    private _CargaScripts:CargarScriptsService
+    private _CargaScripts: CargarScriptsService,
+    private _activatedRoute: ActivatedRoute
   ) {
     this.postModelo = new Solicitudes(
-      '',
-      '',
       '',
       '',
       '',
@@ -48,14 +47,22 @@ export class FormularioComponent implements OnInit {
     this.token = this._loginService.obtenerToken();
     this.identidad = JSON.parse(localStorage.getItem('identidad'));
 
-    _CargaScripts.Carga(["ejemplo"]);
+    _CargaScripts.Carga(['ejemplo']);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._activatedRoute.paramMap.subscribe((dataRuta) => {
+      localStorage.setItem('idBeca', dataRuta.get('Beca'));
+    });
+  }
 
-  enviarSolicitud(idBeca) {
+  enviarSolicitud() {
     this._userService
-      .enviarSolicitud(idBeca, this.token, this.postModelo)
+      .enviarSolicitud(
+        localStorage.getItem('idBeca'),
+        this.token,
+        this.postModelo
+      )
       .subscribe({
         next: (response: any) => {
           Swal.fire({
@@ -74,9 +81,4 @@ export class FormularioComponent implements OnInit {
         },
       });
   }
-
-
-
-
-
 }

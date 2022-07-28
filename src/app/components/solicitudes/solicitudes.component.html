@@ -1,0 +1,184 @@
+<app-navbar-vistas></app-navbar-vistas>
+
+<div class="banner">
+  <div class="capa"></div>
+  <div class="info">
+    <h1>Mis solicitudes</h1>
+    <p>
+      En este apartado veras todas las solicitudes de beca que hayas enviado.
+    </p>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="bg-image h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <div class="title-cards">
+                    <h2>Mis solicitudes</h2>
+                  </div>
+
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Beca</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Notas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let usuarios of getModelo">
+                        <th scope="row">{{ usuarios.nombreBeca }}</th>
+                        <td>
+                          <span>
+                            <span>{{ usuarios.estado }}</span>
+                          </span>
+                        </td>
+                        <td>
+                          <span>
+                            <button
+                              *ngIf="usuarios.aprobado == null"
+                              type="button"
+                              class="btn btn-primary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#exampleModal"
+                            >
+                              Ver nota
+                            </button>
+                            <button
+                              *ngIf="usuarios.aprobado == true"
+                              type="button"
+                              class="btn btn-success"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalAprobado"
+                            >
+                              Ver nota
+                            </button>
+                            <button
+                              *ngIf="usuarios.aprobado == false"
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalRechazado"
+                            >
+                              Ver nota
+                            </button>
+                            <button
+                              (click)="cancelarSolicitud(usuarios._id)"
+                              *ngIf="usuarios.aprobado == null"
+                              type="button"
+                              class="btn btn-danger"
+                            >
+                              Cancelar solicitud
+                            </button>
+                            <button
+                              (click)="borrarSolicitud(usuarios._id)"
+                              *ngIf="usuarios.aprobado == false"
+                              type="button"
+                              class="btn btn-warning"
+                            >
+                              Borrar
+                            </button>
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Solicitud en proceso <i class="fa-solid fa-circle-info"></i>
+        </h5>
+      </div>
+      <div class="modal-body">
+        Tu solicitud aún está en proceso.
+        <br />
+        Por favor, revisa más tarde.
+      </div>
+      <div class="modal-footer">
+        <button data-bs-dismiss="modal" type="button" class="btn btn-primary">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="modalAprobado"
+  tabindex="-1"
+  aria-labelledby="modalAprobado"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Solicitud aprobada <i class="fa-solid fa-circle-check"></i>
+        </h5>
+      </div>
+      <div class="modal-body">
+        Tu solicitud de beca ha sido aprobada.
+        <!--         <br />
+        Por favor, revisa más tarde. -->
+      </div>
+      <div class="modal-footer">
+        <button data-bs-dismiss="modal" type="button" class="btn btn-success">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="modalRechazado"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Solicitud rechazada<i class="fa-solid fa-circle-x"></i>
+        </h5>
+      </div>
+      <div class="modal-body">
+        Tu solicitud de beca ha sido rechazada.
+        <!--    <br />
+        Por favor, revisa más tarde. -->
+      </div>
+      <div class="modal-footer">
+        <button data-bs-dismiss="modal" type="button" class="btn btn-danger">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
