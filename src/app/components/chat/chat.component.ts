@@ -16,6 +16,11 @@ export class ChatComponent implements OnInit {
   mensajes;
   eventName = 'enviar';
 
+  mensajesInicio = {
+    usuario: '',
+    texto: '',
+  };
+
   constructor(private _chat: ChatService) {
     this.identidad = JSON.parse(localStorage.getItem('identidad'));
   }
@@ -23,7 +28,10 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.chatUsuario.usuario =
       this.identidad.nombre + ' ' + this.identidad.apellido;
-      
+    this.mensajesInicio.usuario =
+      this.identidad.nombre + ' ' + this.identidad.apellido;  
+
+    this.mensajesInicios();
 
     this._chat.listen('enviar-mensaje').subscribe({
       next: (response: any) => {
@@ -35,5 +43,10 @@ export class ChatComponent implements OnInit {
   misMensajes() {
     this._chat.emit(this.eventName, this.chatUsuario);
     this.chatUsuario.texto = '';
+  }
+
+  mensajesInicios() {
+    this._chat.emit(this.eventName, this.mensajesInicio);
+    this.mensajesInicio.texto = ' se ha unido al chat';
   }
 }
