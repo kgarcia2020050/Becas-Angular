@@ -11,9 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-.section{
-  margin-top: 30px;
-}
 a {
   transition: all 200ms linear;
 }
@@ -92,11 +89,10 @@ h6 span {
   position: relative;
   width: 440px;
   max-width: 100%;
-  height: 500px;
+  height: 610px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
-  margin-top: 60px;
 }
 .card-3d-wrapper {
   width: 100%;

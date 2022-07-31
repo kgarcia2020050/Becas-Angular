@@ -1,16 +1,10 @@
-<app-navbar-inicio></app-navbar-inicio>
 <body>
   <div class="section">
     <div class="container">
       <div class="row full-height justify-content-center">
         <div class="col-12 text-center align-self-center py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <input
-              class="checkbox"
-              type="checkbox"
-              id="reg-log"
-              name="reg-log"
-            />
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
             <div class="card-3d-wrap mx-auto">
               <div class="card-3d-wrapper">
                 <div class="card-front">
@@ -18,72 +12,33 @@
                     <div class="section text-center">
                       <h4 class="mb-4 pb-3">Crear Cuenta</h4>
                       <div class="form-group">
-                        <span
-                          *ngIf="!nombre.valid && nombre.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!nombre.valid && nombre.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <input
-                          #nombre="ngModel"
-                          [(ngModel)]="postModelo.nombre"
-                          type="text"
-                          name="logname"
-                          class="form-style"
-                          placeholder="Nombre"
-                          id="logname"
-                          autocomplete="off"
-                          required="true"
-                        />
+                        <input #nombre="ngModel" [(ngModel)]="postModelo.nombre" type="text" name="logname"
+                          class="form-style" placeholder="Nombre" id="logname" autocomplete="off" required="true" />
                         <i class="input-icon uil uil-user"></i>
                       </div>
 
                       <div class="form-group mt-2">
-                        <span
-                          *ngIf="!apellido.valid && apellido.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!apellido.valid && apellido.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <input
-                          name="apellido"
-                          #apellido="ngModel"
-                          [(ngModel)]="postModelo.apellido"
-                          type="text"
-                          class="form-style"
-                          placeholder="Apellido"
-                          id="lognombre"
-                          autocomplete="off"
-                          required="true"
-                        />
+                        <input name="apellido" #apellido="ngModel" [(ngModel)]="postModelo.apellido" type="text"
+                          class="form-style" placeholder="Apellido" id="lognombre" autocomplete="off" required="true" />
                         <i class="input-icon uil uil-at"></i>
                       </div>
 
                       <div class="form-group mt-2">
-                        <span
-                          *ngIf="!genero.valid && genero.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!genero.valid && genero.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <select
-                          name="genero"
-                          #genero="ngModel"
-                          [(ngModel)]="postModelo.genero"
-                          type="text"
-                          class="form-style"
-                          placeholder="Genero"
-                          id="lognombre"
-                          autocomplete="off"
-                          required="true"
-                        >
+                        <select name="genero" #genero="ngModel" [(ngModel)]="postModelo.genero" type="text"
+                          class="form-style" placeholder="Genero" id="lognombre" autocomplete="off" required="true">
                           <option value="" disabled selected hidden>
                             No especificado
                           </option>
-                          <option
-                            *ngFor="let tipos of generos"
-                            value="{{ tipos.genero }}"
-                          >
+                          <option *ngFor="let tipos of generos" value="{{ tipos.genero }}">
                             {{ tipos.genero }}
                           </option>
                         </select>
@@ -91,74 +46,34 @@
                       </div>
 
                       <div class="form-group mt-2">
-                        <span
-                          *ngIf="!email.valid && email.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!email.valid && email.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <input
-                          name="email"
-                          #email="ngModel"
-                          [(ngModel)]="postModelo.email"
-                          type="email"
-                          name="logemail"
-                          class="form-style"
-                          placeholder="Email"
-                          id="logemail"
-                          autocomplete="off"
-                          required="true"
-                        />
+                        <input name="email" #email="ngModel" [(ngModel)]="postModelo.email" type="email" name="logemail"
+                          class="form-style" placeholder="Email" id="logemail" autocomplete="off" required="true" />
                         <i class="input-icon uil uil-at"></i>
                       </div>
                       <div class="form-group mt-2">
-                        <span
-                          *ngIf="!telefono.valid && telefono.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!telefono.valid && telefono.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <input
-                          #telefono="ngModel"
-                          [(ngModel)]="postModelo.telefono"
-                          type="number"
-                          name="logemail"
-                          class="form-style"
-                          placeholder="Número de teléfono"
-                          id="logemail"
-                          autocomplete="off"
-                          required="true"
-                        />
+                        <input #telefono="ngModel" [(ngModel)]="postModelo.telefono" type="number" name="logemail"
+                          class="form-style" placeholder="Número de teléfono" id="logemail" autocomplete="off"
+                          required="true" />
                         <i class="input-icon uil uil-at"></i>
                       </div>
                       <div class="form-group mt-2">
-                        <span
-                          *ngIf="!password.valid && password.touched"
-                          class="requiredField"
-                        >
+                        <span *ngIf="!password.valid && password.touched" class="requiredField">
                           Campo requerido
                         </span>
-                        <input
-                          #password="ngModel"
-                          [(ngModel)]="postModelo.password"
-                          type="password"
-                          name="logpass"
-                          class="form-style"
-                          placeholder="Password"
-                          id="logpass"
-                          autocomplete="off"
-                          required="true"
-                        />
+                        <input #password="ngModel" [(ngModel)]="postModelo.password" type="password" name="logpass"
+                          class="form-style" placeholder="Password" id="logpass" autocomplete="off" required="true" />
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                      <a (click)="postUsuarios()" class="btn mt-4"
-                        >Crear Cuenta</a
-                      >
+                      <a (click)="postUsuarios()" class="btn mt-4">Crear Cuenta</a>
                       <p class="mb-0 mt-4 text-center">
-                        <a routerLink="/login" class="link"
-                          >¿Ya tienes una cuenta? haz clic aquí iniciar
-                          sesión.</a
-                        >
+                        <a routerLink="/login" class="link">¿Ya tienes una cuenta? haz clic aquí iniciar
+                          sesión.</a>
                       </p>
                     </div>
                   </div>
