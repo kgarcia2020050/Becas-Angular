@@ -11,7 +11,7 @@ import { BecasService } from 'src/app/services/becas.service';
   providers: [BecasService, LoginService],
 })
 export class VistaUsuarioComponent implements OnInit {
-  public getModelo: Usuario;
+  public getModelo: any
   public token;
   public identidad;
 
@@ -25,7 +25,7 @@ export class VistaUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.empresasRegistradas();
-    localStorage.removeItem("idBeca");
+    localStorage.removeItem('idBeca');
   }
   empresasRegistradas() {
     this._becaService.obtenerBecas().subscribe({

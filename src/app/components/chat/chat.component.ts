@@ -7,11 +7,7 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent implements OnInit {
-  public identidad;
-  chatUsuario = {
-    usuario: '',
-    texto: '',
-  };
+  public identidad: any;
 
   mensajes;
   eventName = 'enviar';
@@ -25,11 +21,15 @@ export class ChatComponent implements OnInit {
     this.identidad = JSON.parse(localStorage.getItem('identidad'));
   }
 
+  chatUsuario = {
+    usuario: '',
+    texto: '',
+  };
   ngOnInit(): void {
     this.chatUsuario.usuario =
       this.identidad.nombre + ' ' + this.identidad.apellido;
     this.mensajesInicio.usuario =
-      this.identidad.nombre + ' ' + this.identidad.apellido;  
+      this.identidad.nombre + ' ' + this.identidad.apellido;
 
     this.mensajesInicios();
 

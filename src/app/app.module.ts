@@ -5,6 +5,7 @@ import { CargarScriptsService } from './cargar-scripts.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +58,8 @@ import { ChatComponent } from './components/chat/chat.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [
     CargarScriptsService
