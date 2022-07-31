@@ -7,7 +7,7 @@ import { Observable, Subscriber } from 'rxjs';
 })
 export class ChatService {
   socket: any;
-  url = 'http://localhost:3030';
+  url = 'https://becas-nodejs.herokuapp.com';
   constructor() {
     // @ts-ignore
     this.socket = io(this.url);

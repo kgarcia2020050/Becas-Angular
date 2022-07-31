@@ -7,7 +7,7 @@ import { Usuario } from '../models/usuario';
   providedIn: 'root',
 })
 export class LoginService {
-  public url: String = 'http://localhost:3000/api/';
+  public url: String = 'https://becas-nodejs.herokuapp.com/api/';
   public headersVariable = new HttpHeaders().set(
     'Content-Type',
     'application/json'

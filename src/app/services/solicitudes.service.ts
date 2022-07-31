@@ -7,7 +7,7 @@ import { Solicitudes } from '../models/solicitudes';
   providedIn: 'root',
 })
 export class SolicitudesService {
-  public url: String = 'http://localhost:3000/api/';
+  public url: String = 'https://becas-nodejs.herokuapp.com/api/';
   public headersVariable = new HttpHeaders().set(
     'Content-Type',
     'application/json'
