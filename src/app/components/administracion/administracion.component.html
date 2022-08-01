@@ -25,28 +25,12 @@
                     </h2>
                     <h2 *ngIf="this.identidad.rol == 'USUARIO'">Hoteles</h2>
                   </div>
-
-                  <!--                   <div class="wrap">
-                    <div class="search">
-                      <input [(ngModel)]="search" type="text" class="searchTerm" placeholder="Buscar" />
-                      <button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                  </div> -->
-
-                  <button
-                    *ngIf="this.identidad.rol == 'ADMIN'"
-                    id="ap"
-                    type="button"
-                    class="learn-more"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
+                  <button *ngIf="this.identidad.rol == 'ADMIN'" id="ap" type="button" class="learn-more"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <span class="circle" aria-hidden="true">
                       <span class="icon arrow"></span>
                     </span>
-                    <span class="button-text">Agregar empresa</span>
+                    <span class="button-text">Agregar</span>
                   </button>
                   <section class="search-container">
                     <div class="container">
@@ -58,40 +42,27 @@
                               <div class="form-inline"></div>
                             </div>
                           </div>
-                          <div
-                            class="row search-card-result"
-                            *ngFor="let hoteles of getModelo"
-                          >
+                          <div class="row search-card-result" *ngFor="let hoteles of getModelo">
                             <div class="col-md-3">
-                              <img
-                                class="img-fluid"
-                                src="http://placeimg.com/640/640/arch"
-                                alt="Card image cap"
-                              />
+                              <img class="img-fluid"
+                                src="https://img.freepik.com/foto-gratis/reserve-biblioteca-viejo-libro-texto-abierto-apile-pilas-archivos-texto-literatura-escritorio-lectura_1150-9086.jpg?w=996&t=st=1659308930~exp=1659309530~hmac=f623bf248ca1331165f59eb2931c26c18789ab9d63d22b0f44fda7398a093755"
+                                alt="Card image cap" />
                             </div>
                             <div class="col-md-5">
                               <h5>{{ hoteles.nombre }}</h5>
- 
+
                               <p class="border-top additional">
                                 Contacto: {{ hoteles.email }}
                               </p>
                               <p>Teléfono: {{ hoteles.telefono }}</p>
 
                             </div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            ></div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            >
-                              <div
-                                *ngIf="this.identidad.rol == 'USUARIO'"
-                                class="btn btn-success"
-                                [routerLink]="[
+                            <div class="gy-4 col-md-2 border-left text-center more-offers"></div>
+                            <div class="gy-4 col-md-2 border-left text-center more-offers">
+                              <div *ngIf="this.identidad.rol == 'USUARIO'" class="btn btn-success" [routerLink]="[
                                   '/routerUsuario/verHotel',
                                   hoteles._id
-                                ]"
-                              >
+                                ]">
                                 Reservar &gt;
                               </div>
 
@@ -111,13 +82,7 @@
   </div>
 </section>
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -130,20 +95,11 @@
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!nombre.valid && nombre.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!nombre.valid && nombre.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="nombre"
-                  #nombre="ngModel"
-                  [(ngModel)]="postModelo.nombre"
-                  required
-                />
+                <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="postModelo.nombre"
+                  required />
                 <label class="form-label" for="form3Example1">Nombre</label>
               </div>
             </div>
@@ -152,59 +108,32 @@
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!telefono.valid && telefono.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!telefono.valid && telefono.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <input
-                  type="number"
-                  class="form-control"
-                  name="telefono"
-                  #telefono="ngModel"
-                  [(ngModel)]="postModelo.telefono"
-                  required
-                />
+                <input type="number" class="form-control" name="telefono" #telefono="ngModel"
+                  [(ngModel)]="postModelo.telefono" required />
                 <label class="form-label">Número de teléfono</label>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!email.valid && email.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!email.valid && email.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  #email="ngModel"
-                  [(ngModel)]="postModelo.email"
-                  required
-                />
+                <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="postModelo.email"
+                  required />
                 <label class="form-label">Email</label>
               </div>
             </div>
           </div>
           <div *ngIf="identidad.rol == 'ADMIN'" class="mb-3">
             <label class="form-label">Password</label>
-            <span
-              *ngIf="!password.valid && password.touched"
-              class="requiredField"
-            >
+            <span *ngIf="!password.valid && password.touched" class="requiredField">
               Campo requerido
             </span>
-            <input
-              type="password"
-              class="form-control"
-              name="password"
-              #password="ngModel"
-              [(ngModel)]="postModelo.password"
-              required
-            />
+            <input type="password" class="form-control" name="password" #password="ngModel"
+              [(ngModel)]="postModelo.password" required />
           </div>
         </form>
       </div>
@@ -212,14 +141,8 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button
-          *ngIf="identidad.rol == 'ADMIN'"
-          type="button"
-          data-bs-dismiss="modal"
-          class="btn btn-primary"
-          [disabled]="!addForm.form.valid"
-          (click)="postEmpresa(addForm)"
-        >
+        <button *ngIf="identidad.rol == 'ADMIN'" type="button" data-bs-dismiss="modal" class="btn btn-primary"
+          [disabled]="!addForm.form.valid" (click)="postEmpresa(addForm)">
           Agregar
         </button>
       </div>

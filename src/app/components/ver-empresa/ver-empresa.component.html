@@ -6,26 +6,15 @@
       <div class="row">
         <div class="col-md-4">
           <div class="profile-img">
-            <img
-              class="rounded-circle mt-5"
-              width="200px"
-              src="https://solucionesads.com/wp-content/uploads/2019/11/becas.png"
-            />
+            <img class="rounded-circle mt-5" width="200px"
+              src="https://solucionesads.com/wp-content/uploads/2019/11/becas.png" />
           </div>
         </div>
         <div class="col-md-6">
           <div class="profile-head">
             <h5>
-              <span
-                *ngIf="this.identidad.rol == 'EMPRESA'"
-                class="font-weight-bold"
-                >Modificar Beca</span
-              >
-              <span
-                *ngIf="this.identidad.rol == 'USUARIO'"
-                class="font-weight-bold"
-                >Informacion de beca</span
-              >
+              <span *ngIf="this.identidad.rol == 'EMPRESA'" class="font-weight-bold">Modificar Beca</span>
+              <span *ngIf="this.identidad.rol == 'USUARIO'" class="font-weight-bold">Informacion de becas</span>
             </h5>
             <h6 *ngIf="this.identidad.rol == 'EMPRESA'">
               Administrador de la empresa
@@ -33,16 +22,8 @@
             <p class="proile-rating">OPCIONES : <span></span></p>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a
-                  *ngIf="this.identidad.rol == 'EMPRESA'"
-                  class="nav-link active"
-                  id="home-tab"
-                  data-toggle="tab"
-                  role="tab"
-                  aria-controls="home"
-                  aria-selected="true"
-                  >Editar información</a
-                >
+                <a *ngIf="this.identidad.rol == 'EMPRESA'" class="nav-link active" id="home-tab" data-toggle="tab"
+                  role="tab" aria-controls="home" aria-selected="true">Editar información</a>
               </li>
             </ul>
           </div>
@@ -52,32 +33,18 @@
         <div class="col-md-4"></div>
         <div class="col-md-8">
           <div class="tab-content profile-tab" id="myTabContent">
-            <div
-              class="tab-pane fade show active"
-              id="home"
-              role="tabpanel"
-              aria-labelledby="home-tab"
-            >
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="row" *ngIf="this.identidad.rol == 'EMPRESA'">
                 <div class="col-md-5">
                   <label>Nombre</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!nombre.valid && nombre.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!nombre.valid && nombre.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="nombre"
-                      required="true"
-                      #nombre="ngModel"
-                      [(ngModel)]="getIdModelo.nombre"
-                    />
+                    <input type="text" class="form-control" name="nombre" required="true" #nombre="ngModel"
+                      [(ngModel)]="getIdModelo.nombre" />
                   </p>
                 </div>
               </div>
@@ -86,22 +53,12 @@
                   <label>Nombre</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!nombre.valid && nombre.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!nombre.valid && nombre.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <input
-                      readonly="true"
-                      type="text"
-                      class="form-control"
-                      name="nombre"
-                      required="true"
-                      #nombre="ngModel"
-                      [(ngModel)]="getIdModelo.nombre"
-                    />
+                    <input readonly="true" type="text" class="form-control" name="nombre" required="true"
+                      #nombre="ngModel" [(ngModel)]="getIdModelo.nombre" />
                   </p>
                 </div>
               </div>
@@ -133,21 +90,12 @@
                   <label>Descripcion</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!descripcion.valid && descripcion.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!descripcion.valid && descripcion.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <textarea
-                      type="number"
-                      class="form-control"
-                      name="vacantes"
-                      #descripcion="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.descripcion"
-                    ></textarea>
+                    <textarea type="number" class="form-control" name="vacantes" #descripcion="ngModel" required="true"
+                      [(ngModel)]="getIdModelo.descripcion"></textarea>
                   </p>
                 </div>
               </div>
@@ -156,22 +104,12 @@
                   <label>Descripcion</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!descripcion.valid && descripcion.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!descripcion.valid && descripcion.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <textarea
-                      readonly
-                      type="number"
-                      class="form-control"
-                      name="vacantes"
-                      #descripcion="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.descripcion"
-                    ></textarea>
+                    <textarea readonly type="number" class="form-control" name="vacantes" #descripcion="ngModel"
+                      required="true" [(ngModel)]="getIdModelo.descripcion"></textarea>
                   </p>
                 </div>
               </div>
@@ -180,21 +118,12 @@
                   <label>Requisitos</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!requisitos.valid && requisitos.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!requisitos.valid && requisitos.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <textarea
-                      type="text"
-                      class="form-control"
-                      name="requisitos"
-                      #requisitos="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.requisitos"
-                    ></textarea>
+                    <textarea type="text" class="form-control" name="requisitos" #requisitos="ngModel" required="true"
+                      [(ngModel)]="getIdModelo.requisitos"></textarea>
                   </p>
                 </div>
               </div>
@@ -203,53 +132,30 @@
                   <label>Requisitos</label>
                 </div>
                 <div class="col-md-6">
-                  <span
-                    *ngIf="!requisitos.valid && requisitos.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!requisitos.valid && requisitos.touched" class="requiredField">
                     Campo requerido
                   </span>
                   <p>
-                    <textarea
-                      readonly
-                      type="text"
-                      class="form-control"
-                      name="requisitos"
-                      #requisitos="ngModel"
-                      required="true"
-                      [(ngModel)]="getIdModelo.requisitos"
-                    ></textarea>
+                    <textarea readonly type="text" class="form-control" name="requisitos" #requisitos="ngModel"
+                      required="true" [(ngModel)]="getIdModelo.requisitos"></textarea>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <button
-            *ngIf="this.identidad.rol == 'EMPRESA'"
-            [disabled]="!editForm.form.valid"
-            id="btnAgregar"
-            class="learn-more"
-            (click)="editarBeca()"
-          >
+          <button *ngIf="this.identidad.rol == 'EMPRESA'" [disabled]="!editForm.form.valid" id="btnAgregar"
+            class="learn-more" (click)="editarBeca()">
             <span class="circle" aria-hidden="true">
               <span class="icon arrow"></span>
             </span>
             <span class="button-text">Guardar cambios</span>
           </button>
-          <button
-            *ngIf="this.identidad.rol == 'USUARIO'"
-            [disabled]="!editForm.form.valid"
-            id="btnAgregar"
-            class="learn-more"
-          >
+          <button *ngIf="this.identidad.rol == 'USUARIO'" [disabled]="!editForm.form.valid" id="btnAgregar"
+            class="learn-more">
             <span class="circle" aria-hidden="true">
               <span class="icon arrow"></span>
             </span>
-            <span
-              [routerLink]="['/usuario/solicitar', getIdModelo._id]"
-              class="button-text"
-              >Llenar solicitud</span
-            >
+            <span [routerLink]="['/usuario/solicitar', getIdModelo._id]" class="button-text">Postularse</span>
           </button>
         </div>
       </div>

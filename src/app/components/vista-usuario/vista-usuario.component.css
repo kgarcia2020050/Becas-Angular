@@ -240,16 +240,16 @@ table th {
 }
 @keyframes banner{
 	0%, 20%{
-		background-image: url("https://fondosmil.com/fondo/12406.jpg");
+		background-image: url("https://img.freepik.com/foto-gratis/arreglo-dia-educacion-mesa-espacio-copia_23-2148721266.jpg?w=1380&t=st=1659308425~exp=1659309025~hmac=d2744624e7d0a0023c65392709f7bafb18b9c417a8c60d2a3642f83f7f30443b");
 	}
-	25%, 45%{
-		background-image: url("https://www.todopaisajes.com/Minis/ciudad-de-noche.jpg");
+	 25%, 45%{
+		background-image: url("https://img.freepik.com/fotos-premium/aula-escuela-papel-examen-prueba-escritorios-silla-madera_4236-184.jpg?w=1060");
 	}
 	50%, 70%{
-		background-image: url("https://i.pinimg.com/originals/b9/1d/fd/b91dfdd21cf816a69ed544d6800680a4.jpg");
+		background-image: url("https://img.freepik.com/foto-gratis/mochila-abierta-utiles-escolares_23-2148224209.jpg?w=996&t=st=1659308594~exp=1659309194~hmac=ac6f49ef7b59dd636a2cea088270e53e749f110cd7c90e30d9df33344116e608");
 	}
 	75%, 100%{
-		background-image: url("https://i.pinimg.com/originals/55/5e/52/555e52ca50443a4d366858dc5c83d540.jpg");
+		background-image: url("https://img.freepik.com/foto-gratis/concepto-fundacion-formulario-solicitud-beca_53876-132191.jpg?w=900&t=st=1659308635~exp=1659309235~hmac=bc6f626eb5409f1ce8201f854590573baf2eabd4c4789f86fe9b1f225ff6cc68");
 	}
 }
 .capa{

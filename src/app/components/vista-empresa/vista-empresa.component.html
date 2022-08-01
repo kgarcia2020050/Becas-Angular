@@ -32,13 +32,8 @@
                     </div>
                   </div> -->
 
-                  <button
-                    id="ap"
-                    type="button"
-                    class="learn-more"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
+                  <button id="ap" type="button" class="learn-more" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
                     <span class="circle" aria-hidden="true">
                       <span class="icon arrow"></span>
                     </span>
@@ -54,25 +49,18 @@
                               <div class="form-inline"></div>
                             </div>
                           </div>
-                          <div
-                            class="row search-card-result"
-                            *ngFor="let hoteles of getModelo"
-                          >
+                          <div class="row search-card-result" *ngFor="let hoteles of getModelo">
                             <div class="col-md-3">
-                              <img
-                                class="img-fluid"
-                                src="http://placeimg.com/640/640/arch"
-                                alt="Card image cap"
-                              />
+                              <img class="img-fluid"
+                                src="https://img.freepik.com/foto-gratis/reserve-biblioteca-viejo-libro-texto-abierto-apile-pilas-archivos-texto-literatura-escritorio-lectura_1150-9086.jpg?w=996&t=st=1659308930~exp=1659309530~hmac=f623bf248ca1331165f59eb2931c26c18789ab9d63d22b0f44fda7398a093755"
+                                alt="Card image cap" />
                             </div>
                             <div class="col-md-5">
                               <h5>{{ hoteles.nombre }}</h5>
                               <div class="review">
-                                <span class="fa fa-star checked"></span
-                                ><span class="fa fa-star checked"></span
-                                ><span class="fa fa-star checked"></span
-                                ><span class="fa fa-star"></span
-                                ><span class="fa fa-star"></span>
+                                <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
+                                  class="fa fa-star checked"></span><span class="fa fa-star"></span><span
+                                  class="fa fa-star"></span>
                               </div>
                               <p class="border-top additional">
                                 Descripcion: {{ hoteles.descripcion }}
@@ -81,22 +69,13 @@
                                 Vacantes: {{ hoteles.vacantes }}
                               </p>
                               <p>
-                                <i class="p-3 fa fa-bath"></i
-                                ><i class="p-3 fa fa-phone"></i
-                                ><i class="p-3 fa fa-wifi"></i
-                                ><i class="p-3 fa fa-tv"></i>
+                                <i class="p-3 fa fa-bath"></i><i class="p-3 fa fa-phone"></i><i
+                                  class="p-3 fa fa-wifi"></i><i class="p-3 fa fa-tv"></i>
                               </p>
                             </div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            ></div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            >
-                              <div
-                                [routerLink]="['/empresas/beca', hoteles._id]"
-                                class="btn btn-success"
-                              >
+                            <div class="gy-4 col-md-2 border-left text-center more-offers"></div>
+                            <div class="gy-4 col-md-2 border-left text-center more-offers">
+                              <div [routerLink]="['/empresas/beca', hoteles._id]" class="btn btn-success">
                                 Ver hotel &gt;
                               </div>
                             </div>
@@ -115,13 +94,7 @@
   </div>
 </section>
 
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -134,20 +107,11 @@
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!nombre.valid && nombre.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!nombre.valid && nombre.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="nombre"
-                  #nombre="ngModel"
-                  [(ngModel)]="postModelo.nombre"
-                  required
-                />
+                <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="postModelo.nombre"
+                  required />
                 <label class="form-label" for="form3Example1">Nombre</label>
               </div>
             </div>
@@ -156,59 +120,32 @@
           <div class="row mb-4">
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!descripcion.valid && descripcion.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!descripcion.valid && descripcion.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <textarea
-                  type="text"
-                  class="form-control"
-                  name="descripcion"
-                  #descripcion="ngModel"
-                  [(ngModel)]="postModelo.descripcion"
-                  required
-                ></textarea>
+                <textarea type="text" class="form-control" name="descripcion" #descripcion="ngModel"
+                  [(ngModel)]="postModelo.descripcion" required></textarea>
                 <label class="form-label">Descripcion de la beca</label>
               </div>
             </div>
             <div class="col">
               <div class="form-outline">
-                <span
-                  *ngIf="!requisitos.valid && requisitos.touched"
-                  class="requiredField"
-                >
+                <span *ngIf="!requisitos.valid && requisitos.touched" class="requiredField">
                   Campo requerido
                 </span>
-                <textarea
-                  type="text"
-                  class="form-control"
-                  name="requisitos"
-                  #requisitos="ngModel"
-                  [(ngModel)]="postModelo.requisitos"
-                  required
-                ></textarea>
+                <textarea type="text" class="form-control" name="requisitos" #requisitos="ngModel"
+                  [(ngModel)]="postModelo.requisitos" required></textarea>
                 <label class="form-label">Requisitos para la beca</label>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <span
-                    *ngIf="!vacantes.valid && vacantes.touched"
-                    class="requiredField"
-                  >
+                  <span *ngIf="!vacantes.valid && vacantes.touched" class="requiredField">
                     Campo requerido
                   </span>
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="vacantes"
-                    #vacantes="ngModel"
-                    [(ngModel)]="postModelo.vacantes"
-                    required
-                  />
+                  <input type="number" class="form-control" name="vacantes" #vacantes="ngModel"
+                    [(ngModel)]="postModelo.vacantes" required />
                   <label class="form-label" for="form3Example1">Vacantes</label>
                 </div>
               </div>
@@ -220,13 +157,8 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button
-          type="button"
-          data-bs-dismiss="modal"
-          class="btn btn-primary"
-          [disabled]="!addForm.form.valid"
-          (click)="agregarBeca(addForm)"
-        >
+        <button type="button" data-bs-dismiss="modal" class="btn btn-primary" [disabled]="!addForm.form.valid"
+          (click)="agregarBeca(addForm)">
           Agregar
         </button>
       </div>

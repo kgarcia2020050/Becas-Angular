@@ -47,16 +47,11 @@
                               <div class="form-inline"></div>
                             </div>
                           </div>
-                          <div
-                            class="row search-card-result"
-                            *ngFor="let hoteles of getModelo"
-                          >
+                          <div class="row search-card-result" *ngFor="let hoteles of getModelo">
                             <div class="col-md-3">
-                              <img
-                                class="img-fluid"
-                                src="http://placeimg.com/640/640/arch"
-                                alt="Card image cap"
-                              />
+                              <img class="img-fluid"
+                                src="https://img.freepik.com/foto-gratis/reserve-biblioteca-viejo-libro-texto-abierto-apile-pilas-archivos-texto-literatura-escritorio-lectura_1150-9086.jpg?w=996&t=st=1659308930~exp=1659309530~hmac=f623bf248ca1331165f59eb2931c26c18789ab9d63d22b0f44fda7398a093755"
+                                alt="Card image cap" />
                             </div>
                             <div class="col-md-5">
                               <h5>{{ hoteles.nombre }}</h5>
@@ -67,17 +62,10 @@
                               <p>Vacantes: {{ hoteles.vacantes }}</p>
 
                             </div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            ></div>
-                            <div
-                              class="gy-4 col-md-2 border-left text-center more-offers"
-                            >
-                              <div
-                                *ngIf="this.identidad.rol == 'USUARIO'"
-                                class="btn btn-success"
-                                [routerLink]="['/usuario/ver', hoteles._id]"
-                              >
+                            <div class="gy-4 col-md-2 border-left text-center more-offers"></div>
+                            <div class="gy-4 col-md-2 border-left text-center more-offers">
+                              <div *ngIf="this.identidad.rol == 'USUARIO'" class="btn btn-success"
+                                [routerLink]="['/usuario/ver', hoteles._id]">
                                 Ver informacion.
                               </div>
                             </div>

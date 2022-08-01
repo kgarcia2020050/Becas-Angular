@@ -4,16 +4,9 @@
   font-family: sans-serif;
 }
 
-body {
-  /* background: #757F9A;
-  background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
-  background: linear-gradient(to right, #D7DDE8, #757F9A);
- */
-}
-
 .container {
   width: 360px;
-  height: 425px;
+  height: 500px;
   margin: 7% auto;
   background: #fbeee6;
   border-radius: 5px;
